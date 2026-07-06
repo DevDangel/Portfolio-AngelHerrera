@@ -118,7 +118,7 @@ const RightPanel = () => {
                                 animate={{ opacity: 1 }}
                                 style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}
                             >
-                                <h3 style={{ color: 'white', fontSize: '1.5rem', fontWeight: 'bold', textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>
+                                <h3 style={{ color: 'white', fontSize: '1.5rem', fontWeight: 'bold', textShadow: '0 2px 10px rgba(0,0,0,0.8)', textAlign: 'center', padding: '0 1.5rem' }}>
                                     {t('right.projects.rhsolutions.title')}
                                 </h3>
                             </motion.div>
