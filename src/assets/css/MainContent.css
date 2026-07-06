@@ -1,7 +1,28 @@
-.main-content{
+.main-layout-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(1,1fr);
-    margin: 10;
-    padding: 10px;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.content-area {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+@media (max-width: 900px) {
+    .main-layout-container {
+        grid-template-columns: 1fr;
+        margin: 2rem auto;
+        gap: 2rem;
+    }
 }

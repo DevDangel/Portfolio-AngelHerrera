@@ -1,0 +1,77 @@
+{
+  "nav": {
+    "cv": "Resume",
+    "contact": "Contact Me"
+  },
+  "left": {
+    "role": "Junior Fullstack Developer",
+    "description": "\"Clean code makes a happy developer.\"",
+    "getToKnowMe": "Get to know me",
+    "terminalGreeting": "Hi, nice to meet you.",
+    "menu": {
+      "about": "ABOUT",
+      "experience": "EXPERIENCE",
+      "projects": "PROJECTS",
+      "education": "EDUCATION",
+      "location": "LOCATION"
+    }
+  },
+  "right": {
+    "about": {
+      "p1": "<span style=\"color: var(--text-primary)\"><strong><em>\"If it works, don't touch it\".</em></strong></span> That phrase ends when I arrive.",
+      "p2": "I am a software developer prepared to master both sides of the coin: the entire frontend infrastructure and all the complex backend logic. My true passion is software architecture, clean code, and best practices.",
+      "p3": "I don't settle for a system that just \"works\"; I demand it to be scalable, fast, and maintainable. I optimize everything from massive databases to flawless interfaces, transforming complex business problems into indestructible technological solutions."
+    },
+    "sectionExperience": "Experience",
+    "sectionProjects": "Projects",
+    "experience": {
+      "job1": {
+        "date": "Oct 2024 — Present",
+        "title": "Fullstack Analyst and Developer",
+        "company": "Sistemas Informáticos y Soluciones Integrales",
+        "url": "https://siandsi.co/",
+        "description": "I contribute to the evolution of a robust ERP for the logistics and transportation sector. I have implemented over 15 critical functionalities, optimized high-performance SQL queries to process more than 4 million records, and developed government integrations (SOAP/REST). Additionally, I designed fullstack operational dashboards and significantly reduced technical debt by resolving complex bugs in the MVC core."
+      }
+    },
+    "projects": {
+      "rhsolutions": {
+        "title": "RH SOLUTION - HUMAN RESOURCES SOFTWARE",
+        "description": "Human resources management web system that centralizes employee information, document management with digital signature, leave and permission requests, generation of work certificates, and onboarding/resignation processes.",
+        "visit": "Visit",
+        "moreInfo": "View more info",
+        "modalTabs": {
+          "gestion_empleados": "Employee management",
+          "gestion_documental": "Document management",
+          "contratos": "Contracts",
+          "certificados_laborales": "Work certificates",
+          "permisos_empleados": "Employee permissions",
+          "renuncia": "Resignations and offboarding",
+          "firma_digital": "Digital signature"
+        }
+      }
+    },
+    "sectionEducation": "Education",
+    "education": {
+      "edu1": {
+        "date": "2024 - 2026",
+        "institution": "SENA",
+        "degree": "Technology in Software Analysis and Development"
+      },
+      "edu2": {
+        "date": "2026",
+        "institution": "UDEMY",
+        "degree": "Java in 13 Days with Real World Applications"
+      },
+      "edu3": {
+        "date": "2026",
+        "institution": "UDEMY",
+        "degree": "JavaScript Mastery: From Beginner to Expert"
+      }
+    },
+    "sectionLocation": "Location",
+    "location": {
+      "country": "Colombia",
+      "city": "Ibagué"
+    }
+  }
+}

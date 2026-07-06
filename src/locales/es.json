@@ -1,0 +1,77 @@
+{
+  "nav": {
+    "cv": "CV",
+    "contact": "Contáctame"
+  },
+  "left": {
+    "role": "Desarrollador Fullstack Junior",
+    "description": "\"Un código limpio es un desarrollador feliz.\"",
+    "getToKnowMe": "Conóceme",
+    "terminalGreeting": "Hola, es un gusto conocerte.",
+    "menu": {
+      "about": "SOBRE MÍ",
+      "experience": "EXPERIENCIA",
+      "projects": "PROYECTOS",
+      "education": "EDUCACIÓN",
+      "location": "UBÍCAME"
+    }
+  },
+  "right": {
+    "about": {
+      "p1": "<span style=\"color: var(--text-primary)\"><strong><em>\"Si funciona, déjalo quieto\".</em></strong></span> Esa frase se acaba cuando llego yo.",
+      "p2": "Soy un desarrollador de software preparado para dominar ambas caras de la moneda: toda la infraestructura del frontend y toda la compleja lógica del backend. Mi verdadera pasión es la arquitectura de software, el código limpio y las buenas prácticas.",
+      "p3": "No me conformo con que un sistema solo \"funcione\"; exijo que sea escalable, rápido y mantenible. Optimizo desde bases de datos masivas hasta interfaces impecables, transformando problemas de negocio complejos en soluciones tecnológicas indestructibles."
+    },
+    "sectionExperience": "Experiencia",
+    "sectionProjects": "Proyectos",
+    "experience": {
+      "job1": {
+        "date": "Oct 2025 — Presente",
+        "title": "Analista y Desarrollador Fullstack",
+        "company": "Sistemas Informáticos y Soluciones Integrales",
+        "url": "https://siandsi.co/",
+        "description": "Participo en la evolución de un robusto ERP para el sector logístico y de transporte. He implementado más de 15 funcionalidades críticas, optimizado consultas SQL de alto rendimiento para procesar más de 4 millones de registros, y desarrollado integraciones gubernamentales (SOAP/REST). Además, he diseñado dashboards operativos fullstack y reducido significativamente la deuda técnica resolviendo fallos complejos en el core MVC."
+      }
+    },
+    "projects": {
+      "rhsolutions": {
+        "title": "RH SOLUTION - SOFTWARE DE RECURSOS HUMANOS",
+        "description": "Sistema web de gestión de recursos humanos que centraliza la información de empleados, gestión documental con firma digital, solicitud de permisos y licencias, generación de certificados laborales y procesos de habilitación y renuncia.",
+        "visit": "Visitar",
+        "moreInfo": "Ver más información",
+        "modalTabs": {
+          "gestion_empleados": "Gestión empleados",
+          "gestion_documental": "Gestión documental",
+          "contratos": "Contratos",
+          "certificados_laborales": "Certificados laborales",
+          "permisos_empleados": "Permisos de empleados",
+          "renuncia": "Renuncias y control de empleados que renunciaron",
+          "firma_digital": "Firma digital"
+        }
+      }
+    },
+    "sectionEducation": "Educación",
+    "education": {
+      "edu1": {
+        "date": "2024 - 2026",
+        "institution": "SENA",
+        "degree": "Tecnología en Análisis y Desarrollo de Software"
+      },
+      "edu2": {
+        "date": "2026",
+        "institution": "UDEMY",
+        "degree": "Java en 13 Días con Aplicaciones del Mundo Real"
+      },
+      "edu3": {
+        "date": "2026",
+        "institution": "UDEMY",
+        "degree": "Maestría en JavaScript: Desde Principiante Hasta Experto"
+      }
+    },
+    "sectionLocation": "Lugar de Residencia",
+    "location": {
+      "country": "Colombia",
+      "city": "Ibagué"
+    }
+  }
+}

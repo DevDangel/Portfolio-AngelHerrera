@@ -1,35 +1,36 @@
-import React from "react";
-import Cabecera from './Cabecera'
-import Image from './Image'
-import Header from './Header'
-import Contact from './Contact'
-import Perfil from './Perfil'
-import Education from './Education'
-import Experience from './Experience'
-import Skills from './Skills'
-import Conocimientos from './Conocimientos'
-import Idiomas from './Idiomas'
-import References from './References'
-import Footer from './Footer'
-import '../assets/css/MainContent.css';
+import React, { useState, useEffect } from "react";
+import LeftPanel from "./LeftPanel";
+import RightPanel from "./RightPanel";
+import TopNavbar from "./TopNavbar";
+import '../assets/css/MainContent.css'; 
 
-const MainContent =() =>{
-    return(
-    <>  <Cabecera/>
-        <div className="main-content">
-            <Image/>
-            <Header/>
-            <Contact/>
-            <Perfil/>
-            <Education/>
-            <Experience/>
-            <Skills/>
-            <Conocimientos/>
-            <Idiomas/>
-            <References/>
+const MainContent = () => {
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+    useEffect(() => {
+        const handleMouseMove = (e) => {
+            setMousePosition({ x: e.clientX, y: e.clientY });
+        };
+
+        window.addEventListener("mousemove", handleMouseMove);
+        return () => window.removeEventListener("mousemove", handleMouseMove);
+    }, []);
+
+    return (
+        <div style={{ position: 'relative' }}>
+            <TopNavbar />
+            
+            <div 
+                className="mouse-glow" 
+                style={{
+                    background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, var(--glow-color), transparent 80%)`
+                }}
+            />
+            <div className="layout-grid">
+                <LeftPanel />
+                <RightPanel />
+            </div>
         </div>
-        <Footer/>
-    </>     
     );
 };
 

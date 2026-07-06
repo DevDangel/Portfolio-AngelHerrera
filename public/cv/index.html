@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ángel David Herrera Acevedo - CV</title>
+<style>
+  :root{
+    --ink:#1a1a1a;
+    --muted:#5b5b5b;
+    --line:#dcdcdc;
+    --accent:#5b3df0;
+    --bg:#ffffff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:#e9e9ee;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    color:var(--ink);
+  }
+  .page{
+    max-width:880px;
+    margin:32px auto;
+    background:var(--bg);
+    padding:56px 60px;
+    box-shadow:0 4px 24px rgba(0,0,0,.08);
+  }
+  .download-bar{
+    max-width:880px;
+    margin:0 auto;
+    padding:14px 0;
+    text-align:right;
+  }
+  .download-bar button{
+    background:var(--accent);
+    color:#fff;
+    border:none;
+    padding:10px 20px;
+    font-size:14px;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:600;
+  }
+  .download-bar button:hover{opacity:.9;}
+
+  h1{font-size:30px;margin:0 0 4px;font-weight:700;letter-spacing:-.3px;}
+  .subtitle{font-size:14px;color:var(--muted);margin:0 0 28px;}
+
+  .header-row{display:flex;justify-content:space-between;align-items:center;gap:24px;}
+  .profile-photo{
+    width:220px;height:220px;
+    border-radius:50%;
+    object-fit:cover;
+    object-position:top center;
+    border:1px solid var(--line);
+    flex-shrink:0;
+  }
+
+  .layout{display:grid;grid-template-columns:1fr 220px;gap:48px;}
+
+  h2{
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:var(--ink);
+    margin:0 0 12px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .icon-svg{width:15px;height:15px;flex-shrink:0;}
+
+  section{margin-bottom:26px;}
+
+  p{font-size:14px;line-height:1.6;color:#2b2b2b;margin:0 0 10px;}
+
+  .projects{margin-top:6px;}
+  .projects p{margin-bottom:8px;}
+  .projects a{color:var(--accent);text-decoration:none;font-weight:600;}
+  .projects a:hover{text-decoration:underline;}
+
+  .job-title{font-size:15px;font-weight:700;margin:0;}
+  .job-meta{font-size:13px;color:var(--muted);margin:2px 0 10px;}
+  .job-desc{font-size:14px;line-height:1.6;margin:0 0 10px;}
+
+  ul.resp{margin:0 0 12px;padding-left:18px;}
+  ul.resp li{font-size:14px;line-height:1.6;margin-bottom:6px;}
+  ul.resp li b{font-weight:700;}
+
+  .stacklabel{font-style:italic;font-size:13px;color:var(--muted);margin:14px 0 4px;}
+  .stackitems{font-size:13.5px;line-height:1.7;color:#2b2b2b;}
+
+  .edu-title{font-weight:700;font-size:14px;margin:0;}
+  .edu-meta{font-size:13px;color:var(--muted);margin:2px 0;}
+
+  /* Sidebar */
+  .side h2{font-size:12px;margin-bottom:10px;}
+  .side p, .side a{font-size:13.5px;color:#2b2b2b;display:block;margin-bottom:6px;text-decoration:none;}
+  .side a{color:var(--accent);}
+  .side a:hover{text-decoration:underline;}
+
+  .lang-row{display:flex;justify-content:space-between;font-size:13.5px;margin-bottom:4px;}
+  .lang-bar{height:4px;background:var(--line);border-radius:2px;margin-bottom:14px;overflow:hidden;}
+  .lang-fill{height:100%;background:var(--accent);}
+
+  .skills-list{font-size:13.5px;line-height:1.9;}
+  .skills-list div{margin-bottom:4px;}
+  .skills-list div::before{content:"• ";color:var(--accent);font-weight:700;}
+
+  .ref{margin-bottom:12px;}
+  .ref-name{font-weight:700;font-size:13.5px;margin:0;}
+  .ref-role{font-size:12.5px;color:var(--muted);margin:1px 0;}
+  .ref-phone{font-size:12.5px;color:#2b2b2b;}
+
+  hr.divider{border:none;border-top:1px solid var(--line);margin:20px 0;}
+
+  @page{
+    size:A4;
+    margin:4mm 10mm;
+  }
+  @media print{
+    body{background:#fff;}
+    .download-bar{display:none;}
+    .page{
+      box-shadow:none;
+      margin:0;
+      padding:0;
+      max-width:100%;
+    }
+    h1{font-size:24px;}
+    .subtitle{font-size:12px;margin-bottom:10px;}
+    h2{font-size:11px;margin-bottom:4px;}
+    p{font-size:11.5px;line-height:1.35;margin-bottom:3px;}
+    section{margin-bottom:8px;}
+    .job-desc{font-size:11.5px;line-height:1.35;}
+    ul.resp{margin-bottom:6px;}
+    ul.resp li{font-size:11.5px;line-height:1.35;margin-bottom:2px;}
+    .stackitems{font-size:11px;line-height:1.35;}
+    .stacklabel{margin:4px 0 2px;}
+    .side p, .side a{font-size:11px;margin-bottom:3px;}
+    .skills-list div{margin-bottom:2px;}
+    .ref{margin-bottom:4px;}
+    .profile-photo{width:125px;height:125px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="download-bar">
+  <button onclick="window.print()">⬇ Descargar PDF</button>
+</div>
+
+<div class="page" id="cv">
+
+  <div class="header-row">
+    <div>
+      <h1>Ángel David Herrera Acevedo</h1>
+      <div class="subtitle">Desarrollador Fullstack <b>·</b> Dev Backend <b>·</b> Enfocado en resultados</div>
+    </div>
+    <img src="../../src/assets/img/profileoffficial.png" class="profile-photo" alt="Ángel David Herrera Acevedo">
+  </div>
+
+  <div class="layout">
+    <!-- MAIN COLUMN -->
+    <div class="main">
+
+      <section>
+        <h2><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4 4-6 8-6s8 2 8 6"></path></svg> Perfil</h2>
+        <p>Soy un desarrollador Fullstack con formación en Análisis y Desarrollo de Software, apasionado por la arquitectura de software, las buenas prácticas y el código legible y mantenible. Actualmente trabajo en Sistemas Informáticos y Soluciones Integrales, desempeñando el rol de analista y desarrollador de software tanto en backend como en frontend.</p>
+        <p>En los últimos meses me he enfocado en mejorar la mantenibilidad del código, crear validaciones en integraciones con APIs y desarrollar nuevas funcionalidades en módulos del sistema.</p>
+
+        <p style="margin-top:16px;"><b>Proyectos Propios Destacados:</b></p>
+        <div class="projects">
+          <p><a href="https://rhsolutions.proyectoscampus.top/login" target="_blank">RH Solutions</a> — Sistema web de gestión de recursos humanos que centraliza la información de empleados, gestión documental con firma digital, solicitud de permisos y licencias, generación de certificados laborales y procesos de habilitación y renuncia.</p>
+        </div>
+        <div class="projects">
+          <p><a href="https://portfolio-devangel.vercel.app/" target="_blank">Portfolio Angel Herrera</a> — Página web personal para mostrar proyectos y experiencia como desarrollador de software, con un diseño moderno y responsivo.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="1"></rect><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg> Experiencia</h2>
+        <p class="job-title">Desarrollador Fullstack Junior en Sistemas Informáticos y Soluciones Integrales</p>
+        <p class="job-meta">Oct 2024 — Presente</p>
+        <p class="job-desc">Apoyo en el mantenimiento y evolución de un ERP de gestión de transporte en Colombia, que abarca generación de documentos legales de carga para viajes municipales e intermunicipales, facturación, nómina, recursos humanos, contabilidad y cartera.</p>
+
+        <p style="font-style:italic;font-size:13px;color:var(--muted);margin:14px 0 6px;">Responsabilidades y Logros:</p>
+        <ul class="resp">
+          <li><b>Mejora de Módulos (Consistencia de Negocio):</b> Desarrollé e implementé más de 15 nuevas funcionalidades core y reglas de validación en módulos críticos (Transporte, Nómina, Facturación), impactando directamente la operación de más de 10 clientes corporativos.</li>
+          <li><b>Integraciones SOAP/REST (Interoperabilidad):</b> Codifiqué y depuré flujos de comunicación vía XML (Web Services) con el Ministerio de Transporte (RNDC), logrando la sincronización automatizada de remesas, manifiestos y estados operativos.</li>
+          <li><b>Indicadores Operativos:</b> Diseñé y construí 8 nuevos reportes y dashboards KPI fullstack (PHP/JS) orientados a Trazabilidad, Ventas y Devoluciones, dotando a las empresas usuarias de herramientas para ofrecer visibilidad y control en tiempo real de su operación a sus propios clientes.</li>
+          <li><b>Base de Datos y Rendimiento SQL:</b> Optimicé el tiempo de respuesta del sistema creando índices estratégicos para cruzar más de 4 millones de registros, programando funciones determinísticas nativas y reestructurando consultas de alta complejidad.</li>
+          <li><b>Mantenimiento Crítico y Estabilidad:</b> Disminuí la deuda técnica del ERP al investigar, depurar y solucionar más de 16 bugs complejos en el core del sistema (arquitectura MVC) durante 5 meses, previniendo cuellos de botella operativos en los clientes.</li>
+        </ul>
+
+        <p class="stacklabel">Tech stack:</p>
+        <p class="stackitems">PHP 5.4 · PHP 8.0 · Laravel · React · JavaScript · HTML5 · CSS3 · Smarty · Bootstrap · Git · MySQL 5.4 · MySQL 8.0</p>
+
+        <p class="stacklabel">Tools:</p>
+        <p class="stackitems">Code: Visual Studio Code, Antigravity · Deploy: FileZilla, cPanel · Base de datos: phpMyAdmin, HeidiSQL · API: Postman · Control de versiones: Git, GitHub</p>
+      </section>
+
+      <section>
+        <h2><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10L12 5 2 10l10 5 10-5z"></path><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"></path></svg> Educación</h2>
+        <p class="edu-title">Tecnólogo en Análisis y Desarrollo de Software</p>
+        <p class="edu-meta">SENA · 2024 — 2026</p>
+      </section>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="side">
+
+      <section>
+        <h2>Contacto</h2>
+        <p>Ibagué, Tolima</p>
+        <p>Colombia</p>
+        <p><a href="https://wa.link/7p2zmo" target="_blank" title="WhatsApp" style="color:var(--accent);">301 6755558</a></p>
+        <p>angeldavidh18@gmail.com</p>
+      </section>
+
+      <section>
+        <h2>Enlaces</h2>
+        <a href="https://www.linkedin.com/in/angel-david-herrera-acevedo-b3b959316" target="_blank">LinkedIn</a>
+        <a href="https://github.com/DevDangel" target="_blank">Github</a>
+      </section>
+
+      <section>
+        <h2>Idiomas</h2>
+        <p>Español — Nativo</p>
+        <p>Inglés — B1 (empírico)</p>
+      </section>
+
+      <section>
+        <h2>Habilidades</h2>
+        <div class="skills-list">
+          <div>Adaptabilidad y aprendizaje rápido</div>
+          <div>Trabajo en equipo y liderazgo</div>
+          <div>Resolución de problemas</div>
+          <div>Organización y planificación</div>
+          <div>Comunicación efectiva</div>
+          <div>Responsabilidad y ética profesional</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Referencias</h2>
+        <div class="ref">
+          <p class="ref-name">Sandra Milena Cruz Molano</p>
+          <p class="ref-role">Ingeniera de Sistemas</p>
+          <p class="ref-phone">313 3173035</p>
+        </div>
+        <div class="ref">
+          <p class="ref-name">Oscar Fernando Rojas A.</p>
+          <p class="ref-role">Ingeniero de Sistemas</p>
+          <p class="ref-phone">314 2077870</p>
+        </div>
+        <div class="ref">
+          <p class="ref-name">Juan Guillermo Zuluaga</p>
+          <p class="ref-role">Ingeniero de Sistemas</p>
+          <p class="ref-phone">300 4040337</p>
+        </div>
+        <div class="ref">
+          <p class="ref-name">Brayan Alexander Tafur</p>
+          <p class="ref-role">Ingeniero de Sistemas</p>
+          <p class="ref-phone">313 8473710</p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
