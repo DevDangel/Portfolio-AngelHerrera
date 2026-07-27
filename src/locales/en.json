@@ -48,6 +48,24 @@
           "renuncia": "Resignations and offboarding",
           "firma_digital": "Digital signature"
         }
+      },
+      "consciousworld": {
+        "title": "Conscious World — The planet's health",
+        "description": "Interactive world map of planet Earth, to view the current state of pollution and life zones.",
+        "visit": "Visit",
+        "moreInfo": "See more information",
+        "modalTabs": {
+          "contaminacion": "Pollution",
+          "calidad_aire": "Air Quality",
+          "emision_co2": "CO2 Emissions",
+          "plasticos": "Ocean Plastics",
+          "estadisticas_cont": "Statistics (Pollution)",
+          "zonas_vida": "Life Zones",
+          "territorio_protegido": "Protected Territory",
+          "rios": "Rivers and Water Sources",
+          "areas_protegidas": "Protected Areas",
+          "estadisticas_vida": "Statistics (Life)"
+        }
       }
     },
     "sectionEducation": "Education",

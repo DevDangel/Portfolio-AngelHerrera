@@ -48,6 +48,24 @@
           "renuncia": "Renuncias y control de empleados que renunciaron",
           "firma_digital": "Firma digital"
         }
+      },
+      "consciousworld": {
+        "title": "Conscious World — La salud del planeta",
+        "description": "Mapa mundi interactivo del planeta tierra, para ver el estado actual de contaminacion y zonas con vida.",
+        "visit": "Visitar",
+        "moreInfo": "Ver más información",
+        "modalTabs": {
+          "contaminacion": "Contaminación",
+          "calidad_aire": "Calidad del aire",
+          "emision_co2": "Emisión CO2",
+          "plasticos": "Plásticos en el océano",
+          "estadisticas_cont": "Estadísticas (Contaminación)",
+          "zonas_vida": "Zonas de vida",
+          "territorio_protegido": "Territorio protegido",
+          "rios": "Ríos y fuentes hídricas",
+          "areas_protegidas": "Áreas protegidas",
+          "estadisticas_vida": "Estadísticas (Vida)"
+        }
       }
     },
     "sectionEducation": "Educación",

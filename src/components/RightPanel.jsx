@@ -15,12 +15,28 @@ import renunciaImg from "../assets/img/project/renuncia.png";
 import firmaDigitalImg from "../assets/img/project/firma_digital.png";
 import javaImg from "../assets/img/java.jpg";
 import jsImg from "../assets/img/js.jpg";
+
+import cwImg from "../assets/img/project/cw.png";
+import cw1Img from "../assets/img/project/cw1.png";
+import cw2Img from "../assets/img/project/cw2.png";
+import cw3Img from "../assets/img/project/cw3.png";
+import cw4Img from "../assets/img/project/cw4.png";
+import cw5Img from "../assets/img/project/cw5.png";
+import cw6Img from "../assets/img/project/cw6.png";
+import cw7Img from "../assets/img/project/cw7.png";
+import cw8Img from "../assets/img/project/cw8.png";
+import cw9Img from "../assets/img/project/cw9.png";
+
 const RightPanel = () => {
     const { t } = useTranslation();
     const [isProjectHovered, setIsProjectHovered] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [activeModalTab, setActiveModalTab] = useState('gestion_empleados');
     const [certImage, setCertImage] = useState(null);
+
+    const [isCWHovered, setIsCWHovered] = useState(false);
+    const [isCWModalOpen, setIsCWModalOpen] = useState(false);
+    const [activeCWModalTab, setActiveCWModalTab] = useState('contaminacion');
 
     const modalTabs = [
         { id: 'gestion_empleados', img: gestionEmpleadosImg },
@@ -30,6 +46,19 @@ const RightPanel = () => {
         { id: 'permisos_empleados', img: permisosEmpleadosImg },
         { id: 'renuncia', img: renunciaImg },
         { id: 'firma_digital', img: firmaDigitalImg }
+    ];
+
+    const cwModalTabs = [
+        { id: 'contaminacion', img: cwImg },
+        { id: 'calidad_aire', img: cw1Img },
+        { id: 'emision_co2', img: cw2Img },
+        { id: 'plasticos', img: cw3Img },
+        { id: 'estadisticas_cont', img: cw4Img },
+        { id: 'zonas_vida', img: cw5Img },
+        { id: 'territorio_protegido', img: cw6Img },
+        { id: 'rios', img: cw7Img },
+        { id: 'areas_protegidas', img: cw8Img },
+        { id: 'estadisticas_vida', img: cw9Img }
     ];
 
     return (
@@ -204,6 +233,126 @@ const RightPanel = () => {
                         )}
                     </AnimatePresence>
                 </motion.div>
+                
+                <motion.div 
+                    onMouseEnter={() => setIsCWHovered(true)}
+                    onMouseLeave={() => setIsCWHovered(false)}
+                    style={{
+                        position: 'relative',
+                        borderRadius: '12px',
+                        overflow: 'hidden',
+                        background: 'var(--nav-bg)',
+                        border: '1px solid var(--border-color)',
+                        marginTop: '2rem'
+                    }}
+                    animate={{ height: isCWHovered ? 'auto' : '220px' }}
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                >
+                    {/* Contenedor de la imagen */}
+                    <div style={{ position: 'relative', height: '220px', width: '100%' }}>
+                        <img 
+                            src={cwImg} 
+                            alt="Conscious World" 
+                            style={{ 
+                                width: '100%', 
+                                height: '100%', 
+                                objectFit: 'cover',
+                                filter: isCWHovered ? 'none' : 'blur(5px) brightness(0.6)',
+                                transition: 'filter 0.4s ease'
+                            }} 
+                        />
+                        {!isCWHovered && (
+                            <motion.div 
+                                initial={{ opacity: 0 }} 
+                                animate={{ opacity: 1 }}
+                                style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}
+                            >
+                                <h3 style={{ color: 'white', fontSize: '1.5rem', fontWeight: 'bold', textShadow: '0 2px 10px rgba(0,0,0,0.8)', textAlign: 'center', padding: '0 1.5rem' }}>
+                                    {t('right.projects.consciousworld.title')}
+                                </h3>
+                            </motion.div>
+                        )}
+                    </div>
+
+                    {/* Contenido expandible */}
+                    <AnimatePresence>
+                        {isCWHovered && (
+                            <motion.div 
+                                initial={{ opacity: 0, y: -20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -20 }}
+                                transition={{ duration: 0.3 }}
+                                style={{ padding: '1.5rem', borderTop: '1px solid var(--border-color)' }}
+                            >
+                                <h3 style={{ color: 'var(--text-primary)', fontSize: '1.25rem', marginBottom: '0.5rem' }}>
+                                    {t('right.projects.consciousworld.title')}
+                                </h3>
+                                <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '1rem' }}>
+                                    {t('right.projects.consciousworld.description')}
+                                </p>
+
+                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.5rem' }}>
+                                    {['React 19', 'Vite 8', 'MapLibre GL', 'Recharts', 'Framer Motion', 'CSS Modules'].map((tech) => (
+                                        <span key={tech} style={{ color: 'var(--accent)', background: 'rgba(94, 234, 212, 0.1)', padding: '4px 12px', borderRadius: '9999px', fontSize: '0.75rem', fontWeight: '500' }}>
+                                            {tech}
+                                        </span>
+                                    ))}
+                                </div>
+                                
+                                <div style={{ display: 'flex', gap: '1rem' }}>
+                                    <a 
+                                        href="https://conscious-world.vercel.app/" 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        style={{
+                                            display: 'inline-flex',
+                                            alignItems: 'center',
+                                            gap: '0.5rem',
+                                            padding: '0.5rem 1rem',
+                                            background: 'var(--accent)',
+                                            color: '#0f172a',
+                                            borderRadius: '6px',
+                                            fontWeight: '600',
+                                            textDecoration: 'none',
+                                            transition: 'transform 0.2s'
+                                        }}
+                                        onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-2px)'}
+                                        onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+                                    >
+                                        <GlobeIcon size={18} />
+                                        {t('right.projects.consciousworld.visit')}
+                                    </a>
+                                    
+                                    <button 
+                                        onClick={() => setIsCWModalOpen(true)}
+                                        style={{
+                                            display: 'inline-flex',
+                                            alignItems: 'center',
+                                            padding: '0.5rem 1rem',
+                                            background: 'transparent',
+                                            color: 'var(--text-primary)',
+                                            border: '1px solid var(--text-secondary)',
+                                            borderRadius: '6px',
+                                            fontWeight: '600',
+                                            cursor: 'pointer',
+                                            transition: 'all 0.2s'
+                                        }}
+                                        onMouseEnter={(e) => {
+                                            e.currentTarget.style.background = 'rgba(255,255,255,0.1)';
+                                            e.currentTarget.style.borderColor = 'var(--text-primary)';
+                                        }}
+                                        onMouseLeave={(e) => {
+                                            e.currentTarget.style.background = 'transparent';
+                                            e.currentTarget.style.borderColor = 'var(--text-secondary)';
+                                        }}
+                                    >
+                                        {t('right.projects.consciousworld.moreInfo')}
+                                    </button>
+                                </div>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                </motion.div>
             </section>
 
             <section id="education" style={{ marginBottom: '6rem', scrollMarginTop: '100px' }}>
@@ -341,26 +490,18 @@ const RightPanel = () => {
                             </div>
 
                             {/* Cuerpo Modal */}
-                            <div style={{ display: 'flex', flex: 1, overflow: 'hidden' }}>
+                            <div className="modal-body">
                                 {/* Sidebar */}
-                                <div style={{ width: '250px', borderRight: '1px solid rgba(255,255,255,0.1)', overflowY: 'auto', padding: '1rem', background: 'rgba(0,0,0,0.2)' }}>
+                                <div className="modal-sidebar">
                                     {modalTabs.map((tab) => (
                                         <button
                                             key={tab.id}
+                                            className="modal-tab-btn"
                                             onClick={() => setActiveModalTab(tab.id)}
                                             style={{
-                                                display: 'block',
-                                                width: '100%',
-                                                textAlign: 'left',
-                                                padding: '0.75rem 1rem',
-                                                marginBottom: '0.5rem',
-                                                borderRadius: '8px',
                                                 background: activeModalTab === tab.id ? 'rgba(94, 234, 212, 0.1)' : 'transparent',
                                                 color: activeModalTab === tab.id ? 'var(--accent)' : 'var(--text-secondary)',
-                                                border: 'none',
-                                                cursor: 'pointer',
-                                                fontWeight: activeModalTab === tab.id ? '600' : '400',
-                                                transition: 'all 0.2s'
+                                                fontWeight: activeModalTab === tab.id ? '600' : '400'
                                             }}
                                             onMouseEnter={(e) => {
                                                 if (activeModalTab !== tab.id) e.currentTarget.style.color = 'var(--text-primary)';
@@ -375,7 +516,7 @@ const RightPanel = () => {
                                 </div>
                                 
                                 {/* Contenido Imagen */}
-                                <div style={{ flex: 1, padding: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-secondary)', position: 'relative' }}>
+                                <div className="modal-content-img">
                                     <AnimatePresence mode="wait">
                                         <motion.img
                                             key={activeModalTab}
@@ -386,6 +527,105 @@ const RightPanel = () => {
                                             transition={{ duration: 0.3 }}
                                             style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', borderRadius: '8px', boxShadow: '0 10px 25px rgba(0,0,0,0.2)' }}
                                             alt={t(`right.projects.rhsolutions.modalTabs.${activeModalTab}`)}
+                                        />
+                                    </AnimatePresence>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
+            {/* Modal de Detalles del Proyecto Conscious World */}
+            <AnimatePresence>
+                {isCWModalOpen && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        style={{
+                            position: 'fixed',
+                            inset: 0,
+                            zIndex: 9999,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            background: 'rgba(0,0,0,0.8)',
+                            backdropFilter: 'blur(5px)'
+                        }}
+                        onClick={() => setIsCWModalOpen(false)}
+                    >
+                        <motion.div
+                            initial={{ scale: 0.9, opacity: 0, y: 20 }}
+                            animate={{ scale: 1, opacity: 1, y: 0 }}
+                            exit={{ scale: 0.9, opacity: 0, y: 20 }}
+                            onClick={(e) => e.stopPropagation()}
+                            style={{
+                                width: '90%',
+                                maxWidth: '1200px',
+                                height: '80vh',
+                                background: 'var(--bg-primary)',
+                                borderRadius: '16px',
+                                overflow: 'hidden',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                border: '1px solid rgba(255,255,255,0.1)',
+                                boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)'
+                            }}
+                        >
+                            {/* Cabecera Modal */}
+                            <div style={{ padding: '1.5rem', borderBottom: '1px solid rgba(255,255,255,0.1)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                <h3 style={{ fontSize: '1.25rem', color: 'var(--text-primary)', fontWeight: 'bold' }}>
+                                    {t('right.projects.consciousworld.title')}
+                                </h3>
+                                <button 
+                                    onClick={() => setIsCWModalOpen(false)}
+                                    style={{ background: 'transparent', border: 'none', color: 'var(--text-secondary)', cursor: 'pointer' }}
+                                    onMouseEnter={(e) => e.currentTarget.style.color = 'var(--text-primary)'}
+                                    onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}
+                                >
+                                    <X size={24} />
+                                </button>
+                            </div>
+
+                            {/* Cuerpo Modal */}
+                            <div className="modal-body">
+                                {/* Sidebar */}
+                                <div className="modal-sidebar">
+                                    {cwModalTabs.map((tab) => (
+                                        <button
+                                            key={tab.id}
+                                            className="modal-tab-btn"
+                                            onClick={() => setActiveCWModalTab(tab.id)}
+                                            style={{
+                                                background: activeCWModalTab === tab.id ? 'rgba(94, 234, 212, 0.1)' : 'transparent',
+                                                color: activeCWModalTab === tab.id ? 'var(--accent)' : 'var(--text-secondary)',
+                                                fontWeight: activeCWModalTab === tab.id ? '600' : '400'
+                                            }}
+                                            onMouseEnter={(e) => {
+                                                if (activeCWModalTab !== tab.id) e.currentTarget.style.color = 'var(--text-primary)';
+                                            }}
+                                            onMouseLeave={(e) => {
+                                                if (activeCWModalTab !== tab.id) e.currentTarget.style.color = 'var(--text-secondary)';
+                                            }}
+                                        >
+                                            {t(`right.projects.consciousworld.modalTabs.${tab.id}`)}
+                                        </button>
+                                    ))}
+                                </div>
+                                
+                                {/* Contenido Imagen */}
+                                <div className="modal-content-img">
+                                    <AnimatePresence mode="wait">
+                                        <motion.img
+                                            key={activeCWModalTab}
+                                            src={cwModalTabs.find(t => t.id === activeCWModalTab)?.img}
+                                            initial={{ opacity: 0, x: 20 }}
+                                            animate={{ opacity: 1, x: 0 }}
+                                            exit={{ opacity: 0, x: -20 }}
+                                            transition={{ duration: 0.3 }}
+                                            style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', borderRadius: '8px', boxShadow: '0 10px 25px rgba(0,0,0,0.2)' }}
+                                            alt={t(`right.projects.consciousworld.modalTabs.${activeCWModalTab}`)}
                                         />
                                     </AnimatePresence>
                                 </div>
