@@ -19,7 +19,7 @@
   "right": {
     "about": {
       "p1": "<span style=\"color: var(--text-primary)\"><strong><em>\"If it works, don't touch it\".</em></strong></span> That phrase ends when I arrive.",
-      "p2": "I am a software developer prepared to master both sides of the coin: the entire frontend infrastructure and all the complex backend logic. My true passion is software architecture, clean code, and best practices.",
+      "p2": "I'm a software developer equipped to master end-to-end development: all the front-end infrastructure and all the complex back-end logic. My true passion is software architecture, clean code, and best practices.",
       "p3": "I don't settle for a system that just \"works\"; I demand it to be scalable, fast, and maintainable. I optimize everything from massive databases to flawless interfaces, transforming complex business problems into indestructible technological solutions."
     },
     "sectionExperience": "Experience",

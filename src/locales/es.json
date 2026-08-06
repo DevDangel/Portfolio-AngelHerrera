@@ -19,7 +19,7 @@
   "right": {
     "about": {
       "p1": "<span style=\"color: var(--text-primary)\"><strong><em>\"Si funciona, déjalo quieto\".</em></strong></span> Esa frase se acaba cuando llego yo.",
-      "p2": "Soy un desarrollador de software preparado para dominar ambas caras de la moneda: toda la infraestructura del frontend y toda la compleja lógica del backend. Mi verdadera pasión es la arquitectura de software, el código limpio y las buenas prácticas.",
+      "p2": "Soy un desarrollador de software preparado para dominar el desarrollo de extremo a extremo: toda la infraestructura del frontend y toda la compleja lógica del backend. Mi verdadera pasión es la arquitectura de software, el código limpio y las buenas prácticas.",
       "p3": "No me conformo con que un sistema solo \"funcione\"; exijo que sea escalable, rápido y mantenible. Optimizo desde bases de datos masivas hasta interfaces impecables, transformando problemas de negocio complejos en soluciones tecnológicas indestructibles."
     },
     "sectionExperience": "Experiencia",
