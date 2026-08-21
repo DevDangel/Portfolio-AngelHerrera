@@ -292,7 +292,7 @@ const RightPanel = () => {
                                 </p>
 
                                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.5rem' }}>
-                                    {['React 19', 'Vite 8', 'MapLibre GL', 'Recharts', 'Framer Motion', 'CSS Modules'].map((tech) => (
+                                    {['React 19', 'Vite 8', 'MapLibre GL', 'Recharts', 'Framer Motion', 'CSS Modules','AI-Driven Development'].map((tech) => (
                                         <span key={tech} style={{ color: 'var(--accent)', background: 'rgba(94, 234, 212, 0.1)', padding: '4px 12px', borderRadius: '9999px', fontSize: '0.75rem', fontWeight: '500' }}>
                                             {tech}
                                         </span>
