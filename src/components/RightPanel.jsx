@@ -100,7 +100,7 @@ const RightPanel = () => {
                                 {t('right.experience.job1.description')}
                             </p>
                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: '1rem' }}>
-                                {['React', 'Laravel', 'PHP', 'MySQL', 'JavaScript','Git'].map((tech) => (
+                                {['React','Next.js', 'Laravel', 'PHP', 'MySQL', 'JavaScript','CSS','Tailwind','Boostrap','Git'].map((tech) => (
                                     <span key={tech} style={{ color: 'var(--accent)', background: 'rgba(94, 234, 212, 0.1)', padding: '4px 12px', borderRadius: '9999px', fontSize: '0.75rem', fontWeight: '500' }}>
                                         {tech}
                                     </span>
