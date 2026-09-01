@@ -211,6 +211,7 @@ const TopNavbar = () => {
                                                         e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
                                                     }
                                                 }}
+                                                title={`${t('nav.title')} ${socialsData.find(s => s.id === hoveredSocial)?.id}`}
                                             >
                                                 {copiedSocial === hoveredSocial ? <Check size={14} /> : <Copy size={14} />}
                                             </button>

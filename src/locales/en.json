@@ -1,7 +1,8 @@
 {
   "nav": {
     "cv": "Resume",
-    "contact": "Contact Me"
+    "contact": "Contact Me",
+    "title" : "Copy"
   },
   "left": {
     "role": "Junior Fullstack Developer",
