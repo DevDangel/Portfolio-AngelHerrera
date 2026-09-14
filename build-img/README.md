@@ -1,40 +1,45 @@
-# Optimizador de Imágenes
+# Herramientas de Optimización y Conversión de Imágenes
 
-Herramienta en Python para reducir el peso de imágenes (`PNG`, `WEBP`, `JPEG`) preservando la calidad visual, transparencia alfa y resolución nítida.
+Suite de scripts en Python para optimización, compresión y conversión de imágenes de perfil y activos web (`PNG`, `JPG`, `WEBP`) asegurando el cumplimiento de límites de carga (<= 2 MB) y alta fidelidad visual.
 
 ## Requisitos
 
 - Python 3.10+
 - Pillow (`pip install -r requirements.txt`)
 
-## Uso básico
+---
 
-Para optimizar la imagen por defecto (`public/cv/profileoffficial.png`) a un máximo de 2 MB sin modificar la original:
+## 1. Optimizador de Imágenes (`compress_image.py`)
+
+Reduce el peso de imágenes PNG/JPG a un tamaño máximo objetivo (por defecto <= 2.0 MB) mediante compresión zlib y reescalado inteligente Lanczos, manteniendo transparencia RGBA intacta.
 
 ```bash
+# Optimización de la imagen por defecto:
 python build-img/compress_image.py
+
+# Con parámetros personalizados:
+python build-img/compress_image.py -i public/cv/profileoffficial.png -o public/cv/mi-perfil-optimizado.png -m 2.0
 ```
 
-El resultado se guardará en `public/cv/profileoffficial-optimized.png`.
+---
 
-## Opciones avanzadas
+## 2. Conversor de PNG a JPG (`png_to_jpg.py`)
+
+Convierte imágenes PNG a formato JPEG de alta calidad fotográfica (`quality=95` progresivo), componiendo correctamente zonas con transparencia sobre fondo blanco limpio.
 
 ```bash
-# Definir archivo de entrada y salida específicos:
-python build-img/compress_image.py -i public/cv/profileoffficial.png -o public/cv/mi-perfil-ligero.png
+# Conversión de la imagen comprimida a JPG (salida: public/cv/profileoffficial-optimized.jpg):
+python build-img/png_to_jpg.py
 
-# Ajustar el límite máximo en MB (ej. 1.5 MB):
-python build-img/compress_image.py -m 1.5
-
-# Exportar a formato WebP moderno (ultra ligero):
-python build-img/compress_image.py -f WEBP -o public/cv/profile.webp
+# Conversión de cualquier imagen PNG con calidad personalizada:
+python build-img/png_to_jpg.py -i public/cv/profileoffficial.png -o public/cv/profile.jpg -q 92
 ```
 
-## Argumentos disponibles
+### Argumentos de `png_to_jpg.py`
 
 | Argumento | Descripción | Valor por defecto |
 |---|---|---|
-| `-i`, `--input` | Ruta del archivo original | `public/cv/profileoffficial.png` |
-| `-o`, `--output` | Ruta del nuevo archivo generado | `<nombre>-optimized.<ext>` |
-| `-m`, `--max-mb` | Tamaño máximo permitido en MB | `2.0` |
-| `-f`, `--format` | Formato (`PNG`, `WEBP`, `JPEG`) | `PNG` |
+| `-i`, `--input` | Ruta de la imagen PNG de entrada | `public/cv/profileoffficial-optimized.png` |
+| `-o`, `--output` | Ruta del archivo JPG generado | `<mismo_nombre>.jpg` |
+| `-q`, `--quality` | Calidad de compresión JPEG (1-100) | `95` |
+| `-m`, `--max-mb` | Límite máximo en MB | `2.0` |
