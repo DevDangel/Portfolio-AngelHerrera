@@ -15,6 +15,7 @@ import renunciaImg from "../assets/img/project/renuncia.png";
 import firmaDigitalImg from "../assets/img/project/firma_digital.png";
 import javaImg from "../assets/img/java.jpg";
 import jsImg from "../assets/img/js.jpg";
+import efSetCertPdf from "../assets/img/EF SET Certificate.pdf";
 
 const RightPanel = () => {
     const { t } = useTranslation();
@@ -235,12 +236,12 @@ const RightPanel = () => {
                                 {t('right.education.edu2.degree')} 
                                 <span style={{ color: 'var(--accent)', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginLeft: '0.5rem' }}>
                                     {' · '}
-                                    {t('right.education.edu2.institution')}
                                     <button 
                                         onClick={() => setCertImage(javaImg)}
-                                        style={{ background: 'transparent', border: 'none', color: 'var(--accent)', cursor: 'pointer', display: 'flex', alignItems: 'center', padding: 0 }}
+                                        style={{ background: 'transparent', border: 'none', color: 'var(--accent)', cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '0.35rem', padding: 0, font: 'inherit' }}
                                         title="Ver certificado"
                                     >
+                                        <span>{t('right.education.edu2.institution')}</span>
                                         <ExternalLink size={14} />
                                     </button>
                                 </span>
@@ -257,14 +258,63 @@ const RightPanel = () => {
                                 {t('right.education.edu3.degree')} 
                                 <span style={{ color: 'var(--accent)', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginLeft: '0.5rem' }}>
                                     {' · '}
-                                    {t('right.education.edu3.institution')}
                                     <button 
                                         onClick={() => setCertImage(jsImg)}
-                                        style={{ background: 'transparent', border: 'none', color: 'var(--accent)', cursor: 'pointer', display: 'flex', alignItems: 'center', padding: 0 }}
+                                        style={{ background: 'transparent', border: 'none', color: 'var(--accent)', cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '0.35rem', padding: 0, font: 'inherit' }}
                                         title="Ver certificado"
                                     >
+                                        <span>{t('right.education.edu3.institution')}</span>
                                         <ExternalLink size={14} />
                                     </button>
+                                </span>
+                            </h3>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="languages" style={{ marginBottom: '6rem', scrollMarginTop: '100px' }}>
+                <h2 style={{ color: 'var(--text-primary)', fontSize: '1.5rem', marginBottom: '2rem', fontWeight: 'bold' }}>{t('right.sectionLanguages')}</h2>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                    
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 3fr', gap: '1rem' }}>
+                        <header style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', fontWeight: '600', textTransform: 'uppercase', paddingTop: '0.2rem' }}>
+                            {t('right.languages.spanish.levelTag')}
+                        </header>
+                        <div>
+                            <h3 style={{ color: 'var(--text-primary)', fontSize: '1.1rem', fontWeight: '600' }}>
+                                {t('right.languages.spanish.name')}
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 3fr', gap: '1rem' }}>
+                        <header style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', fontWeight: '600', textTransform: 'uppercase', paddingTop: '0.2rem' }}>
+                            {t('right.languages.english.levelTag')}
+                        </header>
+                        <div>
+                            <h3 style={{ color: 'var(--text-primary)', fontSize: '1.1rem', fontWeight: '600' }}>
+                                {t('right.languages.english.name')}
+                                <span style={{ color: 'var(--accent)', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginLeft: '0.5rem' }}>
+                                    {' · '}
+                                    <a 
+                                        href={efSetCertPdf} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer" 
+                                        style={{ 
+                                            color: 'var(--accent)', 
+                                            textDecoration: 'none', 
+                                            display: 'inline-flex', 
+                                            alignItems: 'center', 
+                                            gap: '0.5rem',
+                                            cursor: 'pointer' 
+                                        }}
+                                        title="Ver certificado"
+                                    >
+                                        {t('right.languages.english.certificate')}
+                                        <ExternalLink size={14} />
+                                    </a>
                                 </span>
                             </h3>
                         </div>

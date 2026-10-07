@@ -368,6 +368,10 @@ const LeftPanel = () => {
                         <motion.span layout className="line"></motion.span>
                         <motion.span layout>{t('left.menu.education')}</motion.span>
                     </motion.a>
+                    <motion.a layout href="#languages" onClick={(e) => scrollToSection(e, 'languages')} className="nav-link" style={{ whiteSpace: 'nowrap' }}>
+                        <motion.span layout className="line"></motion.span>
+                        <motion.span layout>{t('left.menu.languages')}</motion.span>
+                    </motion.a>
                     <motion.a layout href="#location" onClick={(e) => scrollToSection(e, 'location')} className="nav-link" style={{ whiteSpace: 'nowrap' }}>
                         <motion.span layout className="line"></motion.span>
                         <motion.span layout>{t('left.menu.location')}</motion.span>

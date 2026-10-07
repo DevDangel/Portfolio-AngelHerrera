@@ -224,4 +224,28 @@ a:hover {
   .modal-content-img {
     padding: 2rem;
   }
+}
+
+.language-cert-link {
+  color: #38bdf8;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.language-cert-link:hover {
+  color: #7dd3fc;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+[data-theme="light"] .language-cert-link {
+  color: #0284c7;
+}
+
+[data-theme="light"] .language-cert-link:hover {
+  color: #0369a1;
 }
