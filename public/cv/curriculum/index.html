@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Angel-David-Herrera-Acevedo-CV</title>
   <style>
     :root {
@@ -18,7 +19,6 @@
       margin: 0;
       background: #e9e9ee;
       font-family: Arial, Helvetica, sans-serif;
-      /* Tipografía limpia y moderna para perfiles tech */
       color: var(--ink);
     }
 
@@ -34,18 +34,43 @@
       max-width: 850px;
       margin: 0 auto;
       padding: 14px 0;
-      text-align: right;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .lang-switch {
+      display: flex;
+    }
+
+    .lang-switch button {
+      padding: 10px 16px;
+    }
+
+    .lang-switch button:first-child {
+      border-radius: 4px 0 0 4px;
+    }
+
+    .lang-switch button:last-child {
+      border-radius: 0 4px 4px 0;
+      margin-left: -2px;
     }
 
     .download-bar button {
       background: #000;
       color: #fff;
-      border: none;
+      border: 2px solid #000;
       padding: 10px 20px;
       font-size: 14px;
       border-radius: 4px;
       cursor: pointer;
       font-weight: bold;
+    }
+
+    .download-bar button.secondary {
+      background: #fff;
+      color: #000;
     }
 
     .download-bar button:hover {
@@ -77,6 +102,7 @@
       color: var(--ink);
       text-decoration: none;
     }
+
     .contact-info a.underline-link {
       text-decoration: underline;
     }
@@ -128,6 +154,18 @@
       line-height: 1.6;
     }
 
+    @media (max-width: 700px) {
+      .page {
+        margin: 16px;
+        padding: 24px 20px;
+      }
+
+      .download-bar {
+        padding: 14px 16px;
+        flex-wrap: wrap;
+      }
+    }
+
     @page {
       size: A4;
       margin: 10mm;
@@ -155,13 +193,17 @@
 <body>
 
   <div class="download-bar">
-    <button onclick="window.print()">⬇ Descargar PDF</button>
+    <div class="lang-switch" role="group" aria-label="Idioma / Language">
+      <button id="btn-es" onclick="setLang('es')">ES</button>
+      <button id="btn-en" class="secondary" onclick="setLang('en')">EN</button>
+    </div>
+    <button id="btn-download" onclick="window.print()">⬇ Descargar PDF</button>
   </div>
 
   <div class="page" id="cv">
 
     <h1>Ángel David Herrera Acevedo</h1>
-    <p class="headline">Desarrollador Fullstack | PHP · Laravel · React · Next.js · MySQL</p>
+    <p class="headline" data-i18n="headline">Desarrollador Fullstack | PHP · Laravel · React · Next.js · MySQL</p>
     <div class="contact-info">
       Ibagué, Tolima, Colombia | <a href="https://wa.link/7p2zmo" target="_blank">+57 301 6755558</a> | <a
         href="mailto:angeldavidh18@gmail.com">angeldavidh18@gmail.com</a><br>
@@ -169,58 +211,58 @@
         target="_blank">github.com/DevDangel</a> | <a href="https://portfolio-devangel.vercel.app/" class="underline-link" target="_blank">portfolio-devangel.vercel.app</a>
     </div>
 
-    <p class="professional-summary">
+    <p class="professional-summary" data-i18n="summary">
       Desarrollador Fullstack con experiencia en PHP/Laravel, React/Next.js y MySQL. Construyo APIs REST, módulos
       transaccionales de ERP (facturación, nómina y transporte), integraciones con servicios web XML, migraciones de
       bases de datos con procesos ETL y optimización de consultas SQL sobre grandes volúmenes de datos.
     </p>
 
-    <h2 class="section-title">Experiencia Profesional</h2>
+    <h2 class="section-title" data-i18n="expTitle">Experiencia Profesional</h2>
     <div class="item-header">
       <span>Sistemas Informáticos y Soluciones Integrales</span>
       <span>Ibagué, Colombia</span>
     </div>
     <div class="item-subheader">
-      <span>Desarrollador Fullstack</span>
-      <span>Oct 2025 - Ago 2026</span>
+      <span data-i18n="expRole">Desarrollador Fullstack</span>
+      <span data-i18n="expDate">Oct 2025 - Ago 2026</span>
     </div>
     <ul>
-      <li>Diseñé e implementé la API REST con <strong>Laravel y Sanctum</strong> para el nuevo Módulo Administrativo de Gerencia, construyendo interfaces dinámicas en <strong>React y Next.js</strong> para centralizar métricas operativas y control de accesos.</li>
-      <li>Diseñé y ejecuté la migración y unificación de bases de datos relacionales de <strong>3 entidades corporativas</strong> hacia un esquema centralizado, implementando flujos ETL en PHP/SQL con homologación del PUC contable, resolución de colisiones de IDs y auditoría transaccional.</li>
-      <li>Optimicé consultas críticas sobre más de <strong>4 millones de registros</strong> en MySQL mediante indexación en columnas de filtrado frecuente y funciones nativas en base de datos, reduciendo el tiempo de respuesta de <strong>~50s a 2s</strong> al delegar el procesamiento desde PHP al motor relacional.</li>
-      <li>Desarrollé la sincronización bidireccional vía <strong>servicios web XML</strong> con la plataforma del Ministerio de Transporte (RNDC), automatizando la expedición de manifiestos de carga y evitando sanciones regulatorias a más de <strong>10 empresas de transporte</strong>.</li>
-      <li>Implementé más de <strong>30 funcionalidades core</strong> y reglas de validación en los módulos transaccionales de Facturación, Nómina y Transporte del ERP, garantizando la consistencia de datos contables y operativos.</li>
+      <li data-i18n="exp1">Diseñé e implementé la API REST con <strong>Laravel y Sanctum</strong> para el nuevo Módulo Administrativo de Gerencia, construyendo interfaces dinámicas en <strong>React y Next.js</strong> para centralizar métricas operativas y control de accesos.</li>
+      <li data-i18n="exp2">Diseñé y ejecuté la migración y unificación de bases de datos relacionales de <strong>3 entidades corporativas</strong> hacia un esquema centralizado, implementando flujos ETL en PHP/SQL con homologación del PUC contable, resolución de colisiones de IDs y auditoría transaccional.</li>
+      <li data-i18n="exp3">Optimicé consultas críticas sobre más de <strong>4 millones de registros</strong> en MySQL mediante indexación en columnas de filtrado frecuente y funciones nativas en base de datos, reduciendo el tiempo de respuesta de <strong>~50s a 2s</strong> al delegar el procesamiento desde PHP al motor relacional.</li>
+      <li data-i18n="exp4">Desarrollé la sincronización bidireccional vía <strong>servicios web XML</strong> con la plataforma del Ministerio de Transporte (RNDC), automatizando la expedición de manifiestos de carga y evitando sanciones regulatorias a más de <strong>10 empresas de transporte</strong>.</li>
+      <li data-i18n="exp5">Implementé más de <strong>30 funcionalidades core</strong> y reglas de validación en los módulos transaccionales de Facturación, Nómina y Transporte del ERP, garantizando la consistencia de datos contables y operativos.</li>
     </ul>
 
-    <h2 class="section-title">Proyectos</h2>
+    <h2 class="section-title" data-i18n="projTitle">Proyectos</h2>
     <div class="item-header">
       <span>RH Solutions</span>
       <span><a href="https://rhsolutions.proyectoscampus.top/login" target="_blank"
           style="color: black; font-weight: normal;">rhsolutions.proyectoscampus.top</a></span>
     </div>
     <ul>
-      <li>Aplicación web monolítica (MVC) desarrollada con <strong>Laravel, Blade y MySQL</strong> para la gestión de recursos humanos, centralizando expedientes laborales, flujos de aprobación de permisos y gestión documental con firma digital.</li>
+      <li data-i18n="proj1">Aplicación web monolítica (MVC) desarrollada con <strong>Laravel, Blade y MySQL</strong> para la gestión de recursos humanos, centralizando expedientes laborales, flujos de aprobación de permisos y gestión documental con firma digital.</li>
     </ul>
 
-    <h2 class="section-title">Educación</h2>
+    <h2 class="section-title" data-i18n="eduTitle">Educación</h2>
     <div class="item-header">
-      <span>Servicio Nacional de Aprendizaje (SENA)</span>
+      <span data-i18n="eduSchool">Servicio Nacional de Aprendizaje (SENA)</span>
       <span>Ibagué, Colombia</span>
     </div>
     <div class="item-subheader">
-      <span>Tecnólogo en Análisis y Desarrollo de Software</span>
+      <span data-i18n="eduDegree">Tecnólogo en Análisis y Desarrollo de Software</span>
       <span>2024 - 2026</span>
     </div>
 
-    <h2 class="section-title">Habilidades</h2>
-    <div class="skills-text">
+    <h2 class="section-title" data-i18n="softTitle">Habilidades</h2>
+    <div class="skills-text" data-i18n="soft">
       Adaptabilidad y aprendizaje rápido, trabajo en equipo y liderazgo, resolución de problemas, organización y
       planificación.<br>
       <strong>Idiomas:</strong> Español (Nativo), Inglés (B1).
     </div>
 
-    <h2 class="section-title">Habilidades Técnicas</h2>
-    <div class="skills-text">
+    <h2 class="section-title" data-i18n="techTitle">Habilidades Técnicas</h2>
+    <div class="skills-text" data-i18n="tech">
       <strong>Desarrollo:</strong> APIs REST, SQL, ETL, servicios web XML, arquitectura MVC.<br>
       <strong>Lenguajes y Frameworks:</strong> PHP (7.4, 8.5), Laravel (11, 12), React, Next.js, JavaScript, TypeScript, HTML5, CSS3, Smarty,
       Bootstrap, Tailwind 4.<br>
@@ -229,6 +271,65 @@
     </div>
 
   </div>
+
+  <script>
+    // English translations. Spanish stays in the HTML above (default).
+    const EN = {
+      headline: 'Full Stack Developer | PHP · Laravel · React · Next.js · MySQL',
+      summary: 'Full Stack Developer with experience in PHP/Laravel, React/Next.js and MySQL. I build REST APIs, transactional ERP modules (invoicing, payroll and transportation), XML web service integrations, database migrations with ETL processes, and SQL query optimization on large datasets.',
+      expTitle: 'Professional Experience',
+      expRole: 'Full Stack Developer',
+      expDate: 'Oct 2025 - Aug 2026',
+      exp1: 'Designed and implemented a REST API with <strong>Laravel and Sanctum</strong> for the new Management Administration Module, building dynamic interfaces in <strong>React and Next.js</strong> to centralize operational metrics and access control.',
+      exp2: 'Designed and executed the migration and consolidation of relational databases from <strong>3 corporate entities</strong> into a centralized schema, implementing ETL pipelines in PHP/SQL with chart of accounts (PUC) mapping, ID collision resolution and transactional auditing.',
+      exp3: 'Optimized critical MySQL queries over <strong>4+ million records</strong> by indexing frequently filtered columns and using native database functions, reducing response time from <strong>~50s to 2s</strong> by moving processing from PHP to the database engine.',
+      exp4: 'Built bidirectional synchronization via <strong>XML web services</strong> with the Colombian Ministry of Transportation platform (RNDC), automating cargo manifest issuance and preventing regulatory penalties for <strong>10+ transportation companies</strong>.',
+      exp5: 'Implemented <strong>30+ core features</strong> and validation rules in the ERP\'s Invoicing, Payroll and Transportation modules, ensuring consistency of accounting and operational data.',
+      projTitle: 'Projects',
+      proj1: 'Monolithic web application (MVC) built with <strong>Laravel, Blade and MySQL</strong> for human resources management, centralizing employee records, leave approval workflows and document management with digital signatures.',
+      eduTitle: 'Education',
+      eduSchool: 'National Learning Service (SENA)',
+      eduDegree: 'Technologist in Software Analysis and Development',
+      softTitle: 'Skills',
+      soft: 'Adaptability and fast learning, teamwork and leadership, problem solving, organization and planning.<br><strong>Languages:</strong> Spanish (Native), English (B1 - Intermediate).',
+      techTitle: 'Technical Skills',
+      tech: '<strong>Development:</strong> REST APIs, SQL, ETL, XML web services, MVC architecture.<br><strong>Languages & Frameworks:</strong> PHP (7.4, 8.5), Laravel (11, 12), React, Next.js, JavaScript, TypeScript, HTML5, CSS3, Smarty, Bootstrap, Tailwind 4.<br><strong>Databases:</strong> MySQL (5.7, 8.0+).<br><strong>Tools:</strong> Git, GitHub, Postman, Visual Studio Code, FileZilla, cPanel, AWS S3, phpMyAdmin, HeidiSQL.'
+    };
+
+    // Save the Spanish version from the HTML so we can switch back.
+    const ES = {};
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      ES[el.dataset.i18n] = el.innerHTML;
+    });
+
+    // The title becomes the PDF file name when printing.
+    const TITLES = {
+      es: 'Angel-David-Herrera-Acevedo-CV',
+      en: 'Angel-David-Herrera-Acevedo-CV-EN'
+    };
+
+    function setLang(lang) {
+      const dict = lang === 'en' ? EN : ES;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const value = dict[el.dataset.i18n];
+        if (value !== undefined) el.innerHTML = value;
+      });
+      document.documentElement.lang = lang;
+      document.title = TITLES[lang];
+      document.getElementById('btn-es').classList.toggle('secondary', lang !== 'es');
+      document.getElementById('btn-en').classList.toggle('secondary', lang !== 'en');
+      document.getElementById('btn-download').textContent =
+        lang === 'en' ? '⬇ Download PDF' : '⬇ Descargar PDF';
+
+      const url = new URL(window.location);
+      url.searchParams.set('lang', lang);
+      history.replaceState(null, '', url);
+    }
+
+    // Open directly in English with ?lang=en
+    const initial = new URLSearchParams(window.location.search).get('lang');
+    if (initial === 'en') setLang('en');
+  </script>
 
 </body>
 
